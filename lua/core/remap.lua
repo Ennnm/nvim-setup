@@ -49,10 +49,56 @@ vim.keymap.set(
     "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
 )
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+
+  -- Better window navigation
+keymap("n", "<C-h>", "<C-w>h", opts) -- move left
+keymap("n", "<C-j>", "<C-w>j", opts) -- move down
+keymap("n", "<C-k>", "<C-w>k", opts) -- move up
+keymap("n", "<C-l>", "<C-w>l", opts) -- move right
+
+keymap("n", "<leader>e", ":Lex 30<cr>", opts) -- opens explorer on the left
+
+ -- resize with arrows
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+-- navigate buffers
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprev<CR>", opts)
+
+-- insert
+-- press jk fast in insert mode to revert back to view mode
+keymap("i", "jk", "<ESC>", opts)
+
+-- visual
+-- stay in indent mode
+keymap("v", "<", "<gv", opts) -- move selected block right
+keymap("v", ">", ">gv", opts) -- move selected block left
+
+-- Move text up and down
+keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- does not work for mac
+keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- does not work for mac
+keymap("v", "p", '"_dP', opts) -- keeps register's copy and paste consistent
+
+-- Visual Block --
+keymap("x", "J", ":m '>+1<CR>gv=gv", opts) -- works for mac
+keymap("x", "K", ":m '<-2<CR>gv=gv", opts) -- works for mac
+keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+
+-- Move text up and down
+-- Terminal --
+-- Better terminal navigation
+-- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+-- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+-- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+-- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
