@@ -42,9 +42,6 @@ local kind_icons = {
 }
 
 cmp.setup({
-  sources = {
-    {name = 'nvim_lsp'},
-  },
   snippet = {
     expand = function(args)
       -- You need Neovim v0.10 to use vim.snippet
@@ -105,7 +102,7 @@ cmp.setup({
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         luasnip = "[Snippet]",
-        buffer = "[Buffer]",
+        buffer = "[File]",
         path = "[Path]",
       })[entry.source.name]
       return vim_item
@@ -131,3 +128,4 @@ cmp.setup({
     native_menu = false,
   },
 })
+

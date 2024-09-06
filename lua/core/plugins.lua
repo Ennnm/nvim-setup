@@ -74,6 +74,8 @@ return packer.startup(function(use)
   use({'williamboman/mason.nvim'})
   use({'williamboman/mason-lspconfig.nvim'})
   use({'neovim/nvim-lspconfig'})
+  use { "jose-elias-alvarez/null-ls.nvim"}
+  use { "RRethy/vim-illuminate"}
   -- cmp
   use({'hrsh7th/nvim-cmp'})
   use({'hrsh7th/cmp-nvim-lsp'})
