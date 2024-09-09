@@ -72,9 +72,11 @@ return packer.startup(function(use)
   use { "folke/tokyonight.nvim" }
   use { "lunarvim/darkplus.nvim"}
 
+  -- treesitter
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
   use('HiPhish/rainbow-delimiters.nvim')
   use 'mbbill/undotree'
+  use('JoosepAlviste/nvim-ts-context-commentstring')
 
   -- LSP
   use({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
