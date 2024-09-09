@@ -58,6 +58,7 @@ return packer.startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim"}
   use { "goolord/alpha-nvim"}
 	use { "folke/which-key.nvim"}
+  use { "lewis6991/gitsigns.nvim"}
 
   -- My plugins here
   -- telecope
@@ -76,7 +77,6 @@ return packer.startup(function(use)
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
   use('HiPhish/rainbow-delimiters.nvim')
   use 'mbbill/undotree'
-  use('JoosepAlviste/nvim-ts-context-commentstring')
 
   -- LSP
   use({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
