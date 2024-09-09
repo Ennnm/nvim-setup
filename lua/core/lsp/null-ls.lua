@@ -15,5 +15,24 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
     -- diagnostics.flake8
+    formatting.stylua,
+    diagnostics.eslint_d,
+    null_ls.builtins.completion.spell,
+    null_ls.builtins.code_actions.gitsigns,
+    diagnostics.ansiblelint,
+    diagnostics.commitlint,
+    diagnostics.dotenv_linter,
+    diagnostics.hadolint, -- docker
+    diagnostics.jsonlint,
+    diagnostics.phpstan, -- Requires a valid phpstan.neon at root
+    -- diagnostics.php,
+    formatting.blade_formatter,
+    diagnostics.sqlfluff.with({
+      extra_args = { "--dialect", "postgres" }, -- change to your dialect
+    }),
+    diagnostics.stylelint, -- scss, less, css, sass
+    diagnostics.zsh,
+    formatting.astyle, -- c, cpp, c#, java
+    formatting.beautysh -- bash
 	},
 })

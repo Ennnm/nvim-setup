@@ -15,9 +15,7 @@ local function my_on_attach(bufnr)
   api.config.mappings.default_on_attach(bufnr)
 
   -- custom mappings
-  vim.keymap.set('n', 'v',     api.node.open.vertical )
-  vim.keymap.set('n', '<C-h>',     api.node.navigate.parent_close )
-  vim.keymap.set('n', '<C-l>',     api.node.open.edit )
+  vim.keymap.set('n', '<C-v>',     api.node.open.vertical )
 end
 
 
