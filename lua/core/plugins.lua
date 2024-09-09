@@ -51,7 +51,7 @@ return packer.startup(function(use)
   use { "lewis6991/impatient.nvim"}
   use { "lukas-reineke/indent-blankline.nvim"}
   use { "goolord/alpha-nvim"}
-	use {"folke/which-key.nvim"}
+	use { "folke/which-key.nvim"}
 
   -- My plugins here
   -- telecope
@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use { "lunarvim/darkplus.nvim"}
 
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
+  use('HiPhish/rainbow-delimiters.nvim')
   use 'mbbill/undotree'
 
   -- LSP

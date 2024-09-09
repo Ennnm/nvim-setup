@@ -224,6 +224,11 @@ _G.packer_plugins = {
     path = "/Users/en/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  ["rainbow-delimiters.nvim"] = {
+    loaded = true,
+    path = "/Users/en/.local/share/nvim/site/pack/packer/start/rainbow-delimiters.nvim",
+    url = "https://github.com/HiPhish/rainbow-delimiters.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/en/.local/share/nvim/site/pack/packer/start/telescope.nvim",
