@@ -62,7 +62,7 @@ keymap("n", "<C-j>", "<C-w>j", opts) -- move down
 keymap("n", "<C-k>", "<C-w>k", opts) -- move up
 keymap("n", "<C-l>", "<C-w>l", opts) -- move right
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts) -- opens explorer on the left
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- opens explorer on the left
 
  -- resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -84,8 +84,8 @@ keymap("v", "<", "<gv", opts) -- move selected block right
 keymap("v", ">", ">gv", opts) -- move selected block left
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- does not work for mac
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- does not work for mac
+keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) 
+keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "p", '"_dP', opts) -- keeps register's copy and paste consistent
 
 -- Visual Block --
