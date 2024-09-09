@@ -38,8 +38,14 @@ local packer_bootstrap = ensure_packer()
 return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use { "nvim-lua/plenary.nvim"} -- Useful lua functions used by lots of plugins
-  use { "windwp/nvim-autopairs"} -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim"}
+  use {
+     "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      config = function()
+          require("nvim-autopairs").setup {}
+      end
+  }
   use { "JoosepAlviste/nvim-ts-context-commentstring"}
   use { "kyazdani42/nvim-web-devicons"}
   use { "kyazdani42/nvim-tree.lua"}
